@@ -13,15 +13,15 @@ in the master machine and in workers.
 
 Start master executing the command
 
-    ./sbin/start-master.sh
+    $SPARK_HOME/sbin/start-master.sh
     
 Then in each worker execute
 
-    ./bin/spark-class org.apache.spark.deploy.worker.Worker spark://<master ip>:<master port>
+    $SPARK_HOME/bin/spark-class org.apache.spark.deploy.worker.Worker spark://<master ip>:<master port>
     
 Then test the cluster setup checking `http://<master ip>:8080` or by executing the shell client:
 
-    ./bin/spark-shell --master spark://<master ip>:<master port>
+    $SPARK_HOME/bin/spark-shell --master spark://<master ip>:<master port>
     
 ## iPython
 
@@ -31,7 +31,7 @@ Then test the cluster setup checking `http://<master ip>:8080` or by executing t
 
 2. pip install ipython[all]
 
-3. MASTER=spark://<master ip>:<master port> IPYTHON_OPTS="notebook" ./bin/pyspark
+3. MASTER=spark://<master ip>:<master port> IPYTHON_OPTS="notebook" $SPARK_HOME/bin/pyspark
 
 ## Try it
 
